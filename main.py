@@ -172,10 +172,12 @@ Train Model w/ Hyper Parameters
 '''
 # Train the best model found in above grid search
 # Using the optimal similarity measure for user-user collaborative filtering
+
+
 def train_model_user_user_opt(k, min_k, name, user_based, min_support, trainset):
     sim_options = {'name': name,
-                'user_based': user_based,
-                'min_support': min_support}
+                   'user_based': user_based,
+                   'min_support': min_support}
 
     # Creating an instance of KNNBasic with optimal hyperparameter values
     sim_user_user_optimized = KNNBasic(
@@ -183,10 +185,12 @@ def train_model_user_user_opt(k, min_k, name, user_based, min_support, trainset)
 
     # Training the algorithm on the train set
     sim_user_user_optimized.fit(trainset)
-    
+
     return sim_user_user_optimized
 
-sim_user_user_optimized = train_model_user_user_opt(k, min_k, name, user_based, min_support, trainset)
+
+sim_user_user_optimized = train_model_user_user_opt(
+    k, min_k, name, user_based, min_support, trainset)
 '''
 Model Performance
 '''
